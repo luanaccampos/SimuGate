@@ -7,6 +7,8 @@
 #include <QMenuBar>
 #include <QMouseEvent>
 #include <QVector>
+#include <QMessageBox>
+#include <QFileDialog>
 #include <QDebug>
 #include "porta.h"
 #include "and.h"
@@ -14,11 +16,12 @@
 #include "true.h"
 #include "false.h"
 #include "grafo.h"
+#include "led.h"
 
 class janelaPrincipal : public QMainWindow
 {
     Grafo g;
-    int adc;
+    int adc, select, seed;
     QVector<int> click;
     Q_OBJECT
 public:
@@ -33,9 +36,13 @@ public slots:
     void adcTrue();
     void adcFalse();
     void adcConexao();
+    void adcLed();
     void itwasclicked(int id);
     void up();
-
+    void apaga();
+    void salvar();
+    void novo();
+    void abrir();
 };
 
 #endif // JANELAPRINCIPAL_H

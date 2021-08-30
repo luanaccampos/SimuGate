@@ -6,8 +6,11 @@
 class Or : public Porta
 {
 public:
-    Or(int x, int y, QWidget *parent);
+    Or(int x, int y, int id, QWidget *parent);
     QString getTipo();
+    void selected();
+    void unSelected();
+    void atualiza();
 };
 
 #endif // OR_H

@@ -6,8 +6,11 @@
 class And : public Porta
 {
 public:
-    And(int x, int y, QWidget *parent);
+    And(int x, int y, int id, QWidget *parent);
     QString getTipo();
+    void selected();
+    void unSelected();
+    void atualiza();
 };
 
 #endif // AND_H

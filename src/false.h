@@ -6,8 +6,11 @@
 class False : public Porta
 {
 public:
-    False(int x, int y, QWidget *parent);
+    False(int x, int y, int id, QWidget *parent);
     QString getTipo();
+    void selected();
+    void unSelected();
+    void adcVizinho(Porta *x);
 };
 
 #endif // FALSE_H

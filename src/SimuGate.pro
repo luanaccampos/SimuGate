@@ -7,6 +7,7 @@ HEADERS += \
     false.h \
     grafo.h \
     janelaprincipal.h \
+    led.h \
     or.h \
     porta.h \
     true.h
@@ -16,6 +17,7 @@ SOURCES += \
     false.cpp \
     grafo.cpp \
     janelaprincipal.cpp \
+    led.cpp \
     main.cpp \
     or.cpp \
     porta.cpp \

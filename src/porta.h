@@ -4,25 +4,33 @@
 #include <QLabel>
 #include <QMouseEvent>
 #include <QVector>
+#include <QPainter>
 #include <QDebug>
 
 class Porta : public QLabel
 {
     Q_OBJECT
     QWidget *parent;
-    int id, x, y;
+protected:
+    QVector <Porta *> vizinhos;
+    QPoint offset;
+    int saida, id, x, y;
 public:
-    Porta(int x, int y, QWidget *parent);
+    Porta(int x, int y, int id, QWidget *parent);
     virtual QString getTipo() = 0;
-    void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
-    void setId(int x);
-    void adcVizinho(int x);
+    void mousePressEvent(QMouseEvent *event);
+    int getId();
+    void removeVizinho(Porta *x);
     int getX();
     int getY();
-    QVector <int> vizinhos;
-protected:
-    QPoint offset;
+    int getSaida();
+    QVector<Porta *> getVizinhos();
+    void drawArestas(QPainter *p);
+    virtual void adcVizinho(Porta *x);
+    virtual void atualiza();
+    virtual void selected() = 0;
+    virtual void unSelected() = 0;
 signals:
     void clicked(int id);
     void moved();
